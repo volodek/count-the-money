@@ -1,0 +1,11 @@
+<div id="<%= dom_id account %>">
+  <p>
+    <strong>Name:</strong>
+    <%= account.name %>
+  </p>
+
+  <p>
+    <strong>Balance:</strong>
+    <%= humanized_money_with_symbol account.balance %>
+  </p>
+</div>
