@@ -1,0 +1,2 @@
+class FinancialCategory < ApplicationRecord
+end

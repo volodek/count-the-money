@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_03_12_205110) do
+ActiveRecord::Schema[7.1].define(version: 2024_03_17_142339) do
   create_table "accounts", force: :cascade do |t|
     t.string "name", null: false
     t.integer "balance_subunits", default: 0, null: false
@@ -19,17 +19,11 @@ ActiveRecord::Schema[7.1].define(version: 2024_03_12_205110) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "operations", force: :cascade do |t|
-    t.string "type", null: false
-    t.string "title", null: false
-    t.text "description"
-    t.integer "amount_subunits", default: 0, null: false
-    t.string "amount_currency", default: "BYN", null: false
-    t.integer "account_id", null: false
+  create_table "financial_categories", force: :cascade do |t|
+    t.string "name"
+    t.string "type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["account_id"], name: "index_operations_on_account_id"
   end
 
-  add_foreign_key "operations", "accounts"
 end
